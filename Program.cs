@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace classes_v2 {
     public class Company {
 
-        // Some readonly properties (let's talk about gets, baby)
+        // Some readonly properties 
         public string Name { get; }
         public DateTime CreatedOn { get; }
 
@@ -12,18 +12,16 @@ namespace classes_v2 {
         public List<Employee> currentEmployees { get; set; }
 
         /*
-            Create a constructor method that accepts two arguments:
+            Constructor method that accepts two arguments:
                 1. The name of the company
                 2. The date it was created
-
-            The constructor will set the value of the public properties
         */
         public Company (string name, DateTime createdOn) {
             Name = name;
             CreatedOn = createdOn;
         }
 
-        // The Company class should also have a ListEmployees() method which outputs the name of each employee to the console.
+        // ListEmployees() method which outputs the name of each employee to the console.
         public void ListEmployees () {
             foreach (Employee e in currentEmployees) {
                 Console.WriteLine ($"{e.firstName} {e.lastName} works for {this.Name} as a {e.title} since {e.startDate}");
@@ -37,6 +35,13 @@ namespace classes_v2 {
         public string title { get; set; }
         public DateTime startDate { get; set; }
 
+        /*
+            Constructor method that accepts two arguments:
+                1. Employee first name
+                2. Employee last name
+                3. Employee title
+                4. Employee start date
+        */
         public Employee (string FirstName, string LastName, string Title, DateTime StartDate) {
             firstName = FirstName;
             lastName = LastName;
@@ -47,7 +52,7 @@ namespace classes_v2 {
 
     class Program {
         static void Main (string[] args) {
-            // Create an instance of a company. Name it whatever you like.
+            // Create an instance of a company.
             Company NSS = new Company ("NSS", DateTime.Now);
 
             // Create three employees
@@ -66,11 +71,8 @@ namespace classes_v2 {
             // Assign the employees list to the company
             NSS.currentEmployees = employees;
 
-            /*
-                Iterate the company's employee list and generate the
-                simple report shown above
-            */
-            NSS.ListEmployees();
+            // invoke list employees method on company
+            NSS.ListEmployees ();
         }
     }
 }
