@@ -24,7 +24,7 @@ namespace classes_v2 {
         // ListEmployees() method which outputs the name of each employee to the console.
         public void ListEmployees () {
             foreach (Employee e in currentEmployees) {
-                Console.WriteLine ($"{e.firstName} {e.lastName} works for {this.Name} as a {e.title} since {e.startDate}");
+                Console.WriteLine ($"{e.firstName} {e.lastName} works for {this.Name} as {e.title} since {e.startDate}");
             }
         }
     }
@@ -56,9 +56,11 @@ namespace classes_v2 {
             Company NSS = new Company ("NSS", DateTime.Now);
 
             // Create three employees
-            Employee Kimmy = new Employee ("Kimmy", "Bird", "Dev", DateTime.Now);
-            Employee Meg = new Employee ("Meg", "Ducharme", "Dev", DateTime.Now);
-            Employee Jenna = new Employee ("Jenna", "Solis", "Dev", DateTime.Now);
+            Employee Kimmy = new Employee ("Kimmy", "Bird", "Excellente Dev", DateTime.Now);
+            Employee Meg = new Employee ("Meg", "Ducharme", "Awesomely Dev", DateTime.Now);
+            Employee Jenna = new Employee ("Jenna", "Solis", "Fantastical Dev", DateTime.Now);
+            Employee Steve = new Employee ("Steve", "Brownlee", "Fearless Lead Instructor", DateTime.Now);
+            Employee Andy = new Employee ("Andy", "Collins", "Expert Tech Guy", DateTime.Now);
 
             // create employee list
             List<Employee> employees = new List<Employee> ();
@@ -67,6 +69,8 @@ namespace classes_v2 {
             employees.Add (Kimmy);
             employees.Add (Meg);
             employees.Add (Jenna);
+            employees.Add (Steve);
+            employees.Add (Andy);
 
             // Assign the employees list to the company
             NSS.currentEmployees = employees;
